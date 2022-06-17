@@ -9,15 +9,16 @@ body {
   height: 40rem;
   background-color: rgb(204, 95, 68);
   background-size: cover;
-  height: 100vh;
+  height: fit-content;
 }
 
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100%;
-  padding: 6vw 8vw;
+  margin: auto 0;
+  padding: 6vw;
   gap: 3vw;
+  height: fit-content;
 }
 
 a {
@@ -28,13 +29,11 @@ a {
 .text {
   color: #fff;
   margin-top: 6rem;
-  width: fit-content;
 }
 
 .text h1 {
   font-size: 4.5vw;
   margin-bottom: 2rem;
-  width: fit-content;
 }
 
 .text p {
@@ -111,11 +110,29 @@ form p {
   color: hsl(246, 25%, 77%);
 }
 
+@media screen and (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+    margin-bottom: 5rem;
+  }
+
+  .text {
+    width: 100%;
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  .text h1 {
+    text-align: center;
+    font-size: 9vw;
+  }
+}
+
 @media (max-width: 375px) {
   body {
     background: url(./images/bg-intro-mobile.png);
     background-color: rgb(204, 95, 68);
-    height: fit-content;
+    max-height: fit-content;
   }
 
   section {
@@ -123,14 +140,11 @@ form p {
     padding: 1.5rem;
   }
 
-  .text {
-    text-align: center;
-  }
   .text p {
     margin-bottom: 1.5rem;
   }
   .text h1 {
-    font-size: 2rem;
+    font-size: 9vw;
   }
 
   form {
